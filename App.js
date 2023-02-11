@@ -6,7 +6,7 @@ import Route from './Route/Route';
 export default function App() {
   return (
       <NavigationContainer>
-        <Route />
+        <Route /> 
       </NavigationContainer>   
   );
 }
