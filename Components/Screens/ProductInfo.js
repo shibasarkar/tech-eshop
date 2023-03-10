@@ -22,40 +22,40 @@ export default ProductInfo = ({ route, navigation }) => {
 	//get product data by productId 
 	const getDataFromDB = async () => {
 		for (let index = 0; index < Items.length; index++) {
-			if (Items[index].id == ProductId){
+			if (Items[index].id == ProductId) {
 				setProduct(Items[index])
 				return;
 			}
-				
+
 		}
 	}
 
 	// add to Cart
 	const addToCart = async (id) => {
-		let itemArray = await AsyncStorage.getItem('cartItems')
-		itemArray = JSON.parse(itemArray)
-		if (itemArray) {
-			let array = itemArray;
-			array.push(id)
-
-			try {
-				AsyncStorage.setItem('cartItems', JSON.stringify(array))
-				ToastAndroid.show("Item Added Successfuly to Cart", ToastAndroid.SHORT)
-				navigation.navigate('Home')
-			} catch (error) {
-				return error
-			}
+		let itemArray = await AsyncStorage.getItem('cartItems');
+		try {
+			itemArray = JSON.parse(itemArray)
+		} catch (error) {
+			console.log("Error", error);
+			itemArray=null
 		}
-		else {
-			let array = []
-			array.push(id)
-			try {
-				await AsyncStorage.setItem('cartItems', JSON.stringify(array))
-				ToastAndroid.show("Item Added Successfuly to Cart", ToastAndroid.SHORT)
-				navigation.navigate('Home')
-			} catch (error) {
-				return error
-			}
+
+		let array = [];
+
+		if (Array.isArray(itemArray) && itemArray.length > 0) {
+			array = itemArray;
+		}
+
+		array.push(id)
+
+		try {
+			await AsyncStorage.setItem('cartItems', JSON.stringify(array))
+			ToastAndroid.show("Item Added Successfuly to Cart", ToastAndroid.SHORT)
+			navigation.navigate('Home')
+		} catch (error) {
+			ToastAndroid.show("Somethig goes Wrong!",ToastAndroid.SHORT)
+			return error
+			
 		}
 	}
 
@@ -78,7 +78,7 @@ export default ProductInfo = ({ route, navigation }) => {
 						paddingLeft: 16,
 
 					}}>
-						<TouchableOpacity>
+						<TouchableOpacity onPress={() => navigation.goBack('Home')}>
 							<Entypo name='chevron-left' style={{
 								fontSize: 18,
 								color: COLORS.Primary,
