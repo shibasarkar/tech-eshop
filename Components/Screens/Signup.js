@@ -7,6 +7,7 @@ export default Signup=()=>{
         <View>
             <SafeAreaView/>
             <Text>Signup Page</Text>
+            <Text>Signup Page</Text>
         </View>
     )
 }
