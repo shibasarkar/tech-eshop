@@ -6,7 +6,7 @@ export default Signup=()=>{
     return(
         <View>
             <SafeAreaView/>
-            <Text>Signup</Text>
+            <Text>Signup Page</Text>
         </View>
     )
 }
