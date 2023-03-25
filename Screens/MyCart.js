@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, ScrollView, TouchableOpacity, Image, ToastAndro
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { COLORS, Items } from "../../Constants/Colors";
+import { COLORS, Items } from "../Constants/Colors";
 
 
 export default MyCart = ({ navigation }) => {

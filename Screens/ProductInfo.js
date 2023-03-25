@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Text, View, StyleSheet, ScrollView, TouchableOpacity, FlatList, Image, Dimensions, Animated, ToastAndroid } from "react-native";
-import { COLORS, Items } from "../../Constants/Colors";
+import { COLORS, Items } from "../Constants/Colors";
 import Entypo from '@expo/vector-icons/Entypo';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import AsyncStorage from '@react-native-async-storage/async-storage'
