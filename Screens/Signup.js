@@ -9,7 +9,7 @@ export default Signup=()=>{
             <SafeAreaView/>
             <Text>Signup Page</Text>
             <TouchableOpacity style={{backgroundColor:'#000',paddingVertical:"20"}}>
-            <Text style={{color:'#fff',fontFamily:fonts.type.NotoSansBold}}>Signup Page</Text>
+            <Text style={{color:'#fff',fontFamily:'NotoSansBlackItalic'}}>Signup Page</Text>
             </TouchableOpacity>
         </View>
     )
